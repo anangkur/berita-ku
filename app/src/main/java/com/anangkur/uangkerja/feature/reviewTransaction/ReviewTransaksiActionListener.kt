@@ -1,4 +1,4 @@
-package com.anangkur.uangkerja.feature.reviewTransaksi
+package com.anangkur.uangkerja.feature.reviewTransaction
 
 interface ReviewTransaksiActionListener {
     fun onClickLanjutkan()

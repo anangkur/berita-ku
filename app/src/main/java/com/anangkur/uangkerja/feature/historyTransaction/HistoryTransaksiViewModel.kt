@@ -1,4 +1,4 @@
-package com.anangkur.uangkerja.feature.historyTransaksi
+package com.anangkur.uangkerja.feature.historyTransaction
 
 import androidx.lifecycle.ViewModel
 import com.anangkur.uangkerja.data.Repository

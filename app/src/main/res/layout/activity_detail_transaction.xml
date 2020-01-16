@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LinearVerticalDefault"
-    tools:context="com.anangkur.uangkerja.feature.reviewTransaction.ReviewTransakiActivity">
+    tools:context="com.anangkur.uangkerja.feature.detailTransaction.DetailTransactionActivity">
 
     <include layout="@layout/layout_toolbar"/>
 
@@ -22,33 +22,54 @@
             android:id="@+id/tv_total"
             style="@style/TextSuperSuperExtraBig"
             android:text="@string/dummy_saldo"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintTop_toBottomOf="@id/tv_label_total"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_copy_nominal"/>
+        <ImageView
+            android:id="@+id/btn_copy_nominal"
+            style="@style/ImageViewWrapAll"
+            android:padding="@dimen/dimens_10dp"
+            android:src="@drawable/ic_content_copy_black_24dp"
+            android:foreground="?selectableItemBackground"
+            app:layout_constraintTop_toTopOf="@id/tv_total"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total"
+            app:layout_constraintLeft_toRightOf="@id/tv_total"
             app:layout_constraintRight_toRightOf="parent"/>
-        <TextView
-            android:id="@+id/tv_label_pilih_bank"
-            style="@style/TextNormal"
-            android:text="@string/label_pilih_bank"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_status"
+            style="@style/ConstraintWrapHeight"
+            android:background="@drawable/rect_rounded_10dp_gray"
             android:layout_marginTop="@dimen/dimens_20dp"
-            app:layout_constraintVertical_chainStyle="packed"
+            android:padding="@dimen/dimens_20dp"
             app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintTop_toBottomOf="@id/tv_total"
-            app:layout_constraintBottom_toTopOf="@id/spinner_pilih_bank"
-            app:layout_constraintLeft_toLeftOf="parent" />
-        <Spinner
-            android:id="@+id/spinner_pilih_bank"
-            style="@style/SpinnerDefault"
-            android:layout_marginTop="@dimen/dimens_4dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_label_pilih_bank"
             app:layout_constraintBottom_toTopOf="@id/layout_bank"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <TextView
+                android:id="@+id/tv_message_status"
+                style="@style/TextNormal"
+                android:text="@string/dummy_message_status"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/tv_date_status"
+                style="@style/TextExtraBig"
+                android:text="@string/dummy_date_status"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimens_4dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_message_status"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_bank"
             style="@style/ConstraintWrapHeight"
             android:background="@drawable/rect_rounded_10dp_gray"
             android:layout_marginTop="@dimen/dimens_20dp"
             android:padding="@dimen/dimens_20dp"
-            app:layout_constraintTop_toBottomOf="@id/spinner_pilih_bank"
+            app:layout_constraintTop_toBottomOf="@id/layout_status"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent">
@@ -85,6 +106,15 @@
                 app:layout_constraintTop_toTopOf="@id/tv_label_norek"
                 app:layout_constraintLeft_toRightOf="@id/tv_label_norek"
                 app:layout_constraintRight_toRightOf="parent"/>
+            <ImageView
+                android:id="@+id/btn_copy_norek"
+                style="@style/ImageViewWrapAll"
+                android:padding="@dimen/dimens_10dp"
+                android:src="@drawable/ic_content_copy_black_24dp"
+                android:foreground="?selectableItemBackground"
+                app:layout_constraintTop_toTopOf="@id/tv_norek"
+                app:layout_constraintBottom_toBottomOf="@id/tv_norek"
+                app:layout_constraintRight_toLeftOf="@id/tv_norek"/>
             <TextView
                 android:id="@+id/tv_label_atas_nama"
                 style="@style/TextNormal"
@@ -103,17 +133,33 @@
                 app:layout_constraintLeft_toRightOf="@id/tv_label_atas_nama"
                 app:layout_constraintRight_toRightOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <com.anangkur.materialloadingbutton.MaterialLoadingButton
-            android:id="@+id/btn_lanjutkan"
-            style="@style/ButtonDefault"
-            app:mlb_defaultColor="@color/colorPrimary"
-            app:mlb_textColor="@color/white"
-            app:mlb_cornerRadius="@dimen/dimens_100dp"
-            app:mlb_textButton="@string/btn_lanjutkan"
-            app:layout_constraintVertical_bias="1"
+        <RelativeLayout
+            android:id="@+id/layout_upload_photo"
+            style="@style/RelativeConstraint"
+            android:layout_marginTop="@dimen/dimens_20dp"
+            android:background="@drawable/rect_rounded_10dp_gray"
+            android:foreground="?selectableItemBackground"
+            app:layout_constraintDimensionRatio="3:1"
             app:layout_constraintTop_toBottomOf="@id/layout_bank"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent">
+            <LinearLayout
+                android:id="@+id/layout_camera"
+                style="@style/LinearVerticalWrapAll"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+                <ImageView
+                    style="@style/ImageViewWrapAll"
+                    android:src="@drawable/ic_photo_camera_white_24dp"/>
+                <TextView
+                    style="@style/TextNormal"
+                    android:text="@string/btn_upload_bukti_transfer"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_result"
+                style="@style/ImageViewDefault"
+                android:visibility="gone"/>
+        </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.anangkur.uangkerja.feature.historyTransaksi
+package com.anangkur.uangkerja.feature.historyTransaction
 
 import android.view.View
 import com.anangkur.uangkerja.R

@@ -8,9 +8,8 @@ import android.text.TextWatcher
 import androidx.appcompat.widget.Toolbar
 import com.anangkur.uangkerja.R
 import com.anangkur.uangkerja.base.BaseActivity
-import com.anangkur.uangkerja.feature.reviewTransaksi.ReviewTransakiActivity
+import com.anangkur.uangkerja.feature.reviewTransaction.ReviewTransakiActivity
 import com.anangkur.uangkerja.util.obtainViewModel
-import com.anangkur.uangkerja.util.showToastShort
 import kotlinx.android.synthetic.main.activity_pilih_koin.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 
