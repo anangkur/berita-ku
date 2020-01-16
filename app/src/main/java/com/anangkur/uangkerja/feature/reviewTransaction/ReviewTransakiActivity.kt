@@ -1,4 +1,4 @@
-package com.anangkur.uangkerja.feature.reviewTransaksi
+package com.anangkur.uangkerja.feature.reviewTransaction
 
 import android.content.Context
 import android.content.Intent

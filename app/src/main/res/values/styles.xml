@@ -44,6 +44,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="RelativeConstraint" parent="RelativeDefault">
+        <item name="android:layout_height">@dimen/dimens_0dp</item>
+        <item name="android:layout_width">@dimen/dimens_0dp</item>
+    </style>
     <style name="RelativeButton" parent="RelativeDefault">
         <item name="android:layout_height">@dimen/dimens_48dp</item>
         <item name="android:background">@drawable/rect_solid_coloraccent_rounded_100dp</item>

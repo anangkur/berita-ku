@@ -77,4 +77,8 @@
     <string name="label_statustransaksi_sukses">Success</string>
     <string name="label_statustransaksi_cancel">Cancel</string>
     <string name="label_statustransaksi_pending">Pending</string>
+    <string name="dummy_date_status">21 Februari 2020</string>
+    <string name="dummy_message_status">Anda belum menyelesaikan pembayaran ini. Harap selesaikan pembayaran sebelum</string>
+    <string name="btn_upload_bukti_transfer">Upload Bukti Transfer</string>
+    <string name="toolbar_detail_transaction">Detil Transaksi</string>
 </resources>

@@ -2,18 +2,17 @@ package com.anangkur.uangkerja.data
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.anangkur.uangkerja.feature.detailProduct.DetailProductViewModel
-import com.anangkur.uangkerja.feature.historyTransaksi.HistoryTransaksiViewModel
+import com.anangkur.uangkerja.feature.detailTransaction.DetailTransactionViewModel
+import com.anangkur.uangkerja.feature.historyTransaction.HistoryTransaksiViewModel
 import com.anangkur.uangkerja.feature.listProduct.ListProductViewModel
 import com.anangkur.uangkerja.feature.login.LoginViewModel
 import com.anangkur.uangkerja.feature.main.home.HomeViewModel
 import com.anangkur.uangkerja.feature.pilihKoin.PilihKoinViewModel
 import com.anangkur.uangkerja.feature.register.RegisterViewModel
-import com.anangkur.uangkerja.feature.reviewTransaksi.ReviewTransaksiViewModel
+import com.anangkur.uangkerja.feature.reviewTransaction.ReviewTransaksiViewModel
 import com.anangkur.uangkerja.feature.splash.SplashViewModel
 import com.anangkur.uangkerja.util.Const
 
@@ -31,6 +30,7 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
                 isAssignableFrom(PilihKoinViewModel::class.java) -> PilihKoinViewModel(repository)
                 isAssignableFrom(ReviewTransaksiViewModel::class.java) -> ReviewTransaksiViewModel(repository)
                 isAssignableFrom(HistoryTransaksiViewModel::class.java) -> HistoryTransaksiViewModel(repository)
+                isAssignableFrom(DetailTransactionViewModel::class.java) -> DetailTransactionViewModel(repository)
                 else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }
         } as T
