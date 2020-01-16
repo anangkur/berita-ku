@@ -7,6 +7,7 @@ import com.anangkur.uangkerja.R
 import com.anangkur.uangkerja.base.BaseFragment
 import com.anangkur.uangkerja.base.BaseSliderAdapter
 import com.anangkur.uangkerja.feature.listProduct.ListProductActivity
+import com.anangkur.uangkerja.feature.pilihKoin.PilihKoinActivity
 import com.anangkur.uangkerja.util.disableClickTablayout
 import com.anangkur.uangkerja.util.obtainViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -30,6 +31,7 @@ class HomeFragment: BaseFragment<ViewModel>(), HomeActionListener{
         setupSliderFragment()
 
         btn_list_product.setOnClickListener { this.onCLickListProduct() }
+        btn_isi_saldo.setOnClickListener { this.onClickIsiSaldo() }
     }
 
     private fun setupViewPagerSlider(){
@@ -51,5 +53,9 @@ class HomeFragment: BaseFragment<ViewModel>(), HomeActionListener{
 
     override fun onCLickListProduct() {
         ListProductActivity.startActivity(requireContext())
+    }
+
+    override fun onClickIsiSaldo() {
+        PilihKoinActivity.startActivity(requireContext())
     }
 }

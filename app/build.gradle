@@ -101,4 +101,7 @@ dependencies {
 
     // anko
     implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+
+    // others
+    implementation "com.github.anangkur:Material-Loading-Button:$materialLoadingButtonVersion"
 }

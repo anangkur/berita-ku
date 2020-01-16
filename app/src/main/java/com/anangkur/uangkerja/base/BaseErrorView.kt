@@ -38,7 +38,7 @@ class BaseErrorView(context: Context, attrs: AttributeSet): RelativeLayout(conte
     }
 
     fun showError(errorMessage: String, buttonErrorString: String = context.getString(R.string.btn_muat_ulang), errorType: Int){
-        pbError.gone()
+        endProgress()
         ivError.visible()
         tvError.visible()
         tvError.text = errorMessage

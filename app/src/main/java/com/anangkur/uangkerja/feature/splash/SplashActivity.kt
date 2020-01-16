@@ -32,7 +32,7 @@ class SplashActivity: BaseActivity<SplashViewModel>() {
             if (mViewModel.isLoggedIn()){
                 MainActivity.startActivity(this)
             }else{
-                LoginActivity.startActivity(this)
+                MainActivity.startActivity(this)
             }
             finish()
         }, 3000)

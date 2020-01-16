@@ -1,46 +1,80 @@
 <resources>
     <string name="app_name">Uang Kerja</string>
 
-    <string name="text_todo">TODO</string>
-
     <string name="btn_muat_ulang">Muat Ulang</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
     <string name="btn_forgot_password">Forgot Password?</string>
     <string name="btn_login">Login</string>
     <string name="btn_sign_up">Sign Up</string>
-    <string name="hint_full_name">Full Name</string>
-    <string name="hint_password_confirm">Password Confirm</string>
+    <string name="btn_isi_saldo">Isi \nSaldo</string>
+    <string name="btn_input_member">Input Member</string>
+    <string name="btn_add_to_cart">Tambahkan ke keranjang</string>
+    <string name="btn_30_koin">+ 30 Koin</string>
+    <string name="btn_10_koin">+ 10 Koin</string>
+    <string name="btn_5_koin">+ 5 Koin</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_history">History</string>
     <string name="menu_topup">Topup</string>
     <string name="menu_pocket">Pocket</string>
     <string name="menu_profile">Profile</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_password_confirm">Password Confirm</string>
+    <string name="hint_input_member">Input Member</string>
+    <string name="hint_nominal_koin">Nominal Koin</string>
+
+    <string name="toolbar_register">Register</string>
+    <string name="toolbar_list_product">List Product</string>
+    <string name="toolbar_detail_product">Detail Product</string>
+    <string name="toolbar_pilih_koin">Pilih Koin</string>
+
     <string name="error_password">password must be 6 character or more</string>
     <string name="error_email">email address is not valid</string>
     <string name="error_default">an error occured</string>
     <string name="error_empty">data is empty</string>
-    <string name="toolbar_register">Register</string>
-    <string name="message_success_register">New Account Registered Successfully</string>
     <string name="error_name">Name Cannot be null</string>
     <string name="error_password_confirm">Password confirm must same with password</string>
-    <string name="dummy_saldo">Rp. 10.000</string>
+
     <string name="label_family_tree">Family Tree</string>
     <string name="label_tambah_family">Tambah Family</string>
     <string name="label_cek_saldo_bonus"><![CDATA[Cek Saldo \n& Bonus]]></string>
-    <string name="btn_isi_saldo">Isi \nSaldo</string>
     <string name="label_beli_produk">Beli \nProduk</string>
     <string name="label_paket_diamond">Paket \nDiamond</string>
     <string name="label_tarik_saldo">Tarik \nSaldo</string>
     <string name="label_paket_basic">Paket \nBasic</string>
     <string name="label_list_produk">List \nProduk</string>
-    <string name="hint_input_member">Input Member</string>
-    <string name="btn_input_member">Input Member</string>
-    <string name="toolbar_list_product">List Product</string>
-    <string name="toolbar_detail_product">Detail Product</string>
-    <string name="btn_add_to_cart">Tambahkan ke keranjang</string>
     <string name="label_instock">Stok Tersedia</string>
     <string name="label_outstok">Stok Kosong</string>
-    <string name="text_category">Kategori</string>
+
+    <string name="message_success_register">New Account Registered Successfully</string>
     <string name="message_delay_before_exit">Tekan kembali untuk keluar</string>
+
+    <string name="dummy_saldo">Rp. 10.000</string>
+
+    <string name="text_todo">TODO</string>
+    <string name="text_category">Kategori</string>
+    <string name="btn_submit">Submit</string>
+    <string name="label_koin_kamu">Koin Kamu</string>
+    <string name="dummy_koin">0</string>
+    <string name="label_total_pembayaran">Total Pembayaran</string>
+    <string name="label_pilih_bank">Pilih Bank</string>
+    <string name="label_nama_bank">Nama Bank</string>
+    <string name="dummy_bank_mandiri">Mandiri</string>
+    <string name="label_nomor_rekening">Nomor Rekening</string>
+    <string name="dummy_norek">1310013437308</string>
+    <string name="label_atas_nama">Atas Nama</string>
+    <string name="dummy_atas_nama">Anang Kurniawan</string>
+    <string name="btn_lanjutkan">Lanjutkan</string>
+    <string name="toolbar_review_transaksi">Review Transaksi</string>
+    <string name="toolbar_history_transaksi">History Transaksi</string>
+    <string name="dummy_jenis_transaksi">TOP_UP</string>
+    <string name="dummy_status">Pending</string>
+    <string name="dummy_id_transaksi">ABC/123/DEF</string>
+    <string name="label_jenistransaksi_order">Order</string>
+    <string name="label_jenistransaksi_topup">Top Up</string>
+    <string name="label_statustransaksi_sukses">Success</string>
+    <string name="label_statustransaksi_cancel">Cancel</string>
+    <string name="label_statustransaksi_pending">Pending</string>
 </resources>

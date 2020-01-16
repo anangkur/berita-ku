@@ -83,16 +83,14 @@ class LoginActivity: BaseActivity<LoginViewModel>(), LoginActionListener {
     }
 
     private fun showLoading(){
-        tv_btn_login.gone()
-        pb_btn_login.visible()
+        btn_login.showProgress()
         et_email.disable()
         et_password.disable()
         mViewModel.isLoading = true
     }
 
     private fun hideLoading(){
-        tv_btn_login.visible()
-        pb_btn_login.gone()
+        btn_login.hideProgress()
         et_email.enable()
         et_password.enable()
         mViewModel.isLoading = false
