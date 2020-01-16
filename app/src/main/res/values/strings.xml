@@ -68,4 +68,13 @@
     <string name="dummy_atas_nama">Anang Kurniawan</string>
     <string name="btn_lanjutkan">Lanjutkan</string>
     <string name="toolbar_review_transaksi">Review Transaksi</string>
+    <string name="toolbar_history_transaksi">History Transaksi</string>
+    <string name="dummy_jenis_transaksi">TOP_UP</string>
+    <string name="dummy_status">Pending</string>
+    <string name="dummy_id_transaksi">ABC/123/DEF</string>
+    <string name="label_jenistransaksi_order">Order</string>
+    <string name="label_jenistransaksi_topup">Top Up</string>
+    <string name="label_statustransaksi_sukses">Success</string>
+    <string name="label_statustransaksi_cancel">Cancel</string>
+    <string name="label_statustransaksi_pending">Pending</string>
 </resources>

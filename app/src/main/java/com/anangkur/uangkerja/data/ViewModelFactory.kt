@@ -7,6 +7,7 @@ import android.preference.PreferenceManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.anangkur.uangkerja.feature.detailProduct.DetailProductViewModel
+import com.anangkur.uangkerja.feature.historyTransaksi.HistoryTransaksiViewModel
 import com.anangkur.uangkerja.feature.listProduct.ListProductViewModel
 import com.anangkur.uangkerja.feature.login.LoginViewModel
 import com.anangkur.uangkerja.feature.main.home.HomeViewModel
@@ -29,6 +30,7 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
                 isAssignableFrom(DetailProductViewModel::class.java) -> DetailProductViewModel(repository)
                 isAssignableFrom(PilihKoinViewModel::class.java) -> PilihKoinViewModel(repository)
                 isAssignableFrom(ReviewTransaksiViewModel::class.java) -> ReviewTransaksiViewModel(repository)
+                isAssignableFrom(HistoryTransaksiViewModel::class.java) -> HistoryTransaksiViewModel(repository)
                 else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }
         } as T
