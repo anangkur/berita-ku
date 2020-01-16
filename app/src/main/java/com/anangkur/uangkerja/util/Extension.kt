@@ -6,8 +6,7 @@ import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
@@ -20,6 +19,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.anangkur.uangkerja.data.ViewModelFactory
 import com.anangkur.uangkerja.R
+import com.anangkur.uangkerja.base.BaseSpinnerListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
@@ -180,4 +180,18 @@ fun SwipeRefreshLayout.startLoading(){
 
 fun SwipeRefreshLayout.stopLoading(){
     this.isRefreshing = false
+}
+
+fun Spinner.setupSpinner(data: ArrayList<String>, listener: BaseSpinnerListener){
+    val arrayAdapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, data)
+    arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+    this.apply {
+        adapter = arrayAdapter
+        onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                listener.onItemSelected(parent, view, position, id)
+            }
+        }
+    }
 }

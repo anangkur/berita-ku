@@ -181,6 +181,11 @@
         <item name="android:layout_height">@dimen/dimens_0dp</item>
         <item name="android:background">@drawable/rect_gradient_black60_black00</item>
     </style>
+    <style name="ViewBackgroundGray">
+        <item name="android:layout_width">@dimen/dimens_0dp</item>
+        <item name="android:layout_height">@dimen/dimens_0dp</item>
+        <item name="android:background">@drawable/rect_rounded_10dp_gray</item>
+    </style>
     <!--end of style for view-->
 
     <!--style for frame-->
@@ -285,4 +290,11 @@
         <item name="android:layout_width">@dimen/dimens_120dp</item>
     </style>
     <!--end of style for button-->
+
+    <!--style for spinner-->
+    <style name="SpinnerDefault">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <!--end of style for spinner-->
 </resources>

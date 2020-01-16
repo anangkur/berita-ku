@@ -58,4 +58,14 @@
     <string name="btn_submit">Submit</string>
     <string name="label_koin_kamu">Koin Kamu</string>
     <string name="dummy_koin">0</string>
+    <string name="label_total_pembayaran">Total Pembayaran</string>
+    <string name="label_pilih_bank">Pilih Bank</string>
+    <string name="label_nama_bank">Nama Bank</string>
+    <string name="dummy_bank_mandiri">Mandiri</string>
+    <string name="label_nomor_rekening">Nomor Rekening</string>
+    <string name="dummy_norek">1310013437308</string>
+    <string name="label_atas_nama">Atas Nama</string>
+    <string name="dummy_atas_nama">Anang Kurniawan</string>
+    <string name="btn_lanjutkan">Lanjutkan</string>
+    <string name="toolbar_review_transaksi">Review Transaksi</string>
 </resources>

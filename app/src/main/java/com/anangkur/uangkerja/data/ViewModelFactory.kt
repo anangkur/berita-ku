@@ -12,6 +12,7 @@ import com.anangkur.uangkerja.feature.login.LoginViewModel
 import com.anangkur.uangkerja.feature.main.home.HomeViewModel
 import com.anangkur.uangkerja.feature.pilihKoin.PilihKoinViewModel
 import com.anangkur.uangkerja.feature.register.RegisterViewModel
+import com.anangkur.uangkerja.feature.reviewTransaksi.ReviewTransaksiViewModel
 import com.anangkur.uangkerja.feature.splash.SplashViewModel
 import com.anangkur.uangkerja.util.Const
 
@@ -27,6 +28,7 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
                 isAssignableFrom(ListProductViewModel::class.java) -> ListProductViewModel(repository)
                 isAssignableFrom(DetailProductViewModel::class.java) -> DetailProductViewModel(repository)
                 isAssignableFrom(PilihKoinViewModel::class.java) -> PilihKoinViewModel(repository)
+                isAssignableFrom(ReviewTransaksiViewModel::class.java) -> ReviewTransaksiViewModel(repository)
                 else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }
         } as T
