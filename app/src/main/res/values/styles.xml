@@ -275,4 +275,14 @@
         <item name="android:background">@color/colorPrimary</item>
     </style>
     <!--end of style for bottom navigation-->
+
+    <!--style for button-->
+    <style name="ButtonDefault">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <style name="ButtonSmall" parent="ButtonDefault">
+        <item name="android:layout_width">@dimen/dimens_120dp</item>
+    </style>
+    <!--end of style for button-->
 </resources>
