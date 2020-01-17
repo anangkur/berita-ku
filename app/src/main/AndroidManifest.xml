@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".feature.detailTransaction.DetailTransactionActivity"></activity>
-        <activity android:name=".feature.historyTransaction.HistoryTransaksiActivity" />
+        <activity android:name=".feature.detailTransaction.DetailTransactionActivity"/>
         <activity android:name=".feature.reviewTransaction.ReviewTransakiActivity" />
         <activity android:name=".feature.pilihKoin.PilihKoinActivity" />
         <activity android:name=".feature.detailProduct.DetailProductActivity" />
