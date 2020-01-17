@@ -51,6 +51,9 @@ ext {
     multilineCollapsingVersion='27.1.1'
 
     materialLoadingButtonVersion='0.0.1'
+
+    imagePickerVersion='2.2.0'
+    imageCropperVersion='2.8.0'
 }
 
 allprojects {

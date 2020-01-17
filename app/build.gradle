@@ -28,6 +28,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 androidExtensions {
@@ -104,4 +108,6 @@ dependencies {
 
     // others
     implementation "com.github.anangkur:Material-Loading-Button:$materialLoadingButtonVersion"
+    implementation "com.github.esafirm.android-image-picker:imagepicker:$imagePickerVersion"
+    api "com.theartofdev.edmodo:android-image-cropper:$imageCropperVersion"
 }

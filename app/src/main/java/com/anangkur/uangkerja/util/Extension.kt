@@ -1,12 +1,16 @@
 package com.anangkur.uangkerja.util
 
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.graphics.Color
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
@@ -20,10 +24,13 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.anangkur.uangkerja.data.ViewModelFactory
 import com.anangkur.uangkerja.R
 import com.anangkur.uangkerja.base.BaseSpinnerListener
+import com.anangkur.uangkerja.base.DialogImagePickerActionListener
+import com.anangkur.uangkerja.util.Const.LABEL_CLIPBOARD
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
+import java.io.File
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.util.regex.Pattern
@@ -194,4 +201,57 @@ fun Spinner.setupSpinner(data: ArrayList<String>, listener: BaseSpinnerListener)
             }
         }
     }
+}
+
+fun Context.showDialogImagePicker(listener: DialogImagePickerActionListener) {
+    val alertDialog = AlertDialog.Builder(this).create()
+    val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_image_picker, null)
+
+    dialogView.apply {
+        val btnCamera = findViewById<LinearLayout>(R.id.btn_camera)
+        val btnGallery = findViewById<LinearLayout>(R.id.btn_gallery)
+        btnCamera.setOnClickListener {
+            listener.onClickCamera()
+            alertDialog.dismiss()
+        }
+        btnGallery.setOnClickListener {
+            listener.onClickGallery()
+            alertDialog.dismiss()
+        }
+    }
+
+    alertDialog.setCancelable(true)
+    alertDialog.setView(dialogView)
+    alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+    alertDialog.show()
+}
+
+// Get length of file in bytes
+val File.fileSizeInBytes: Long
+    get() = length()
+
+// Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
+val File.fileSizeInKB: Long
+    get() = fileSizeInBytes / 1024
+
+// Convert the KB to MegaBytes (1 MB = 1024 KBytes)
+val File.fileSizeInMB: Long
+    get() = fileSizeInKB / 1024
+
+// Get length of file in bytes
+val ByteArray.fileSizeInBytes: Long
+    get() = size.toLong()
+
+// Convert the bytes to Kilobytes (1 KB = 1024 Bytes)
+val ByteArray.fileSizeInKB: Long
+    get() = fileSizeInBytes / 1024
+
+// Convert the KB to MegaBytes (1 MB = 1024 KBytes)
+val ByteArray.fileSizeInMB: Long
+    get() = fileSizeInKB / 1024
+
+fun Context.copyToClipboard(text: String){
+    val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = ClipData.newPlainText(LABEL_CLIPBOARD, text)
+    clipboard.setPrimaryClip(clip)
 }

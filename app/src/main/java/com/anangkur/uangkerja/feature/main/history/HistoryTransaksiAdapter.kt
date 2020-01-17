@@ -1,4 +1,4 @@
-package com.anangkur.uangkerja.feature.historyTransaction
+package com.anangkur.uangkerja.feature.main.history
 
 import android.view.View
 import com.anangkur.uangkerja.R
@@ -9,7 +9,7 @@ import com.anangkur.uangkerja.data.model.transaction.Transaction.Jenis.TOP_UP
 import com.anangkur.uangkerja.data.model.transaction.Transaction.Status.*
 import kotlinx.android.synthetic.main.item_history_transaksi.view.*
 
-class HistoryTransaksiAdapter: BaseAdapter<Transaction>(){
+class HistoryTransaksiAdapter(private val listener: HistoryActionListener): BaseAdapter<Transaction>(){
     override val layout: Int
         get() = R.layout.item_history_transaksi
 
@@ -25,6 +25,7 @@ class HistoryTransaksiAdapter: BaseAdapter<Transaction>(){
             CANCEL -> itemView.tv_status_transaksi.text = itemView.context.getString(R.string.label_statustransaksi_cancel)
             PENDING -> itemView.tv_status_transaksi.text = itemView.context.getString(R.string.label_statustransaksi_pending)
         }
+        itemView.setOnClickListener { listener.onClickItem(data) }
     }
 
 }
