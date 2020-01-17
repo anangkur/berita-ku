@@ -104,4 +104,6 @@ dependencies {
 
     // others
     implementation "com.github.anangkur:Material-Loading-Button:$materialLoadingButtonVersion"
+    implementation "com.github.esafirm.android-image-picker:imagepicker:$imagePickerVersion"
+    api "com.theartofdev.edmodo:android-image-cropper:$imageCropperVersion"
 }

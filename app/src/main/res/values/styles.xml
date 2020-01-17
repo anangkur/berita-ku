@@ -158,6 +158,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="ImageView28" parent="ImageViewDefault">
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+    </style>
     <!--end of style for image view-->
 
     <!--style for text input layout-->
