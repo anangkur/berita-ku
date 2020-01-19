@@ -4,17 +4,18 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.Observer
 import com.anangkur.uangkerja.R
 import com.anangkur.uangkerja.base.BaseActivity
 import com.anangkur.uangkerja.base.DialogImagePickerActionListener
 import com.anangkur.uangkerja.data.model.transaction.Transaction
-import com.anangkur.uangkerja.util.copyToClipboard
-import com.anangkur.uangkerja.util.obtainViewModel
-import com.anangkur.uangkerja.util.showDialogImagePicker
+import com.anangkur.uangkerja.util.*
 import com.esafirm.imagepicker.features.ImagePicker
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
+import kotlinx.android.synthetic.main.activity_detail_transaction.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import org.jetbrains.anko.toast
 import java.io.File
@@ -49,7 +50,15 @@ class DetailTransactionActivity: BaseActivity<DetailTransactionViewModel>(), Det
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        observeViewModel()
+        layout_upload_photo.setOnClickListener { this.onClickPhotos() }
+    }
+
     override fun onClickCopy(value: String) {
+        showToastShort(getString(R.string.message_copy_to_clipboard))
         this.copyToClipboard(value)
     }
 
@@ -76,11 +85,26 @@ class DetailTransactionActivity: BaseActivity<DetailTransactionViewModel>(), Det
         }
     }
 
+    private fun observeViewModel(){
+        mViewModel.apply {
+            isCompressing.observe(this@DetailTransactionActivity, Observer {
+
+            })
+            eventCompressSuccess.observe(this@DetailTransactionActivity, Observer {
+                iv_result.visible()
+                iv_result.setImageURI(Uri.fromFile(it))
+            })
+            eventMessage.observe(this@DetailTransactionActivity, Observer {
+                showSnackbarShort(it)
+            })
+        }
+    }
+
     private fun cropImage(data: Intent?) {
         val image = ImagePicker.getFirstImageOrNull(data)
         CropImage.activity(Uri.fromFile(File(image.path)))
             .setGuidelines(CropImageView.Guidelines.OFF)
-            .setFixAspectRatio(true)
+            .setFixAspectRatio(false)
             .start(this)
     }
 }

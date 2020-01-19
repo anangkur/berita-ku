@@ -24,10 +24,12 @@ class DetailTransactionViewModel(private val repository: Repository): ViewModel(
     val eventMessage = MutableLiveData<String>()
 
     fun compressFileImage(imageFile: File) {
-        CoroutineScope(Dispatchers.IO).launch{
+        CoroutineScope(Dispatchers.Main).launch{
             try {
                 isCompressing.value = true
-                eventCompressSuccess.value = withContext(CoroutineScope(Dispatchers.IO).coroutineContext) { suspendCompressFileImage(imageFile) }
+                eventCompressSuccess.value = withContext(CoroutineScope(Dispatchers.IO).coroutineContext) {
+                    suspendCompressFileImage(imageFile)
+                }
             } catch (e: Exception) {
                 eventMessage.value = e.message
             } finally {
