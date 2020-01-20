@@ -10,6 +10,8 @@ import com.anangkur.uangkerja.R
 import com.anangkur.uangkerja.base.BaseActivity
 import com.anangkur.uangkerja.base.BaseSpinnerListener
 import com.anangkur.uangkerja.data.model.transaction.Bank
+import com.anangkur.uangkerja.data.model.transaction.Transaction
+import com.anangkur.uangkerja.feature.detailTransaction.DetailTransactionActivity
 import com.anangkur.uangkerja.util.obtainViewModel
 import com.anangkur.uangkerja.util.setupSpinner
 import com.anangkur.uangkerja.util.showToastShort
@@ -65,6 +67,14 @@ class ReviewTransakiActivity: BaseActivity<ReviewTransaksiViewModel>(), ReviewTr
     }
 
     override fun onClickLanjutkan() {
-        showToastShort(getString(R.string.btn_lanjutkan))
+        DetailTransactionActivity.startActivity(this,
+            Transaction(
+                "ABC/123/DEF",
+                "",
+                Transaction.Jenis.TOP_UP,
+                "Rp 100.000",
+                "",
+                Transaction.Status.PENDING)
+        )
     }
 }

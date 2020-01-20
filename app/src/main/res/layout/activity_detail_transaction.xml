@@ -159,7 +159,8 @@
             <ImageView
                 android:id="@+id/iv_result"
                 style="@style/ImageViewDefault"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                android:scaleType="centerCrop"/>
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
