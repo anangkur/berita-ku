@@ -9,6 +9,7 @@ import com.anangkur.uangkerja.data.model.auth.ResponseLogin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.profile.ResponseUser
+import com.anangkur.uangkerja.data.model.profile.User
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -57,7 +58,7 @@ interface ApiService {
     @GET("profile")
     suspend fun getUserProfile(
         @Header("Authorization") token: String
-    ): Response<ResponseUser>
+    ): Response<User>
 
     companion object Factory{
         val getApiService: ApiService by lazy {
