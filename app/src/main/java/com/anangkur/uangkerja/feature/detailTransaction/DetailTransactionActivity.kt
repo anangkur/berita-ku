@@ -11,7 +11,6 @@ import com.anangkur.uangkerja.R
 import com.anangkur.uangkerja.base.BaseActivity
 import com.anangkur.uangkerja.base.DialogImagePickerActionListener
 import com.anangkur.uangkerja.data.model.transaction.Transaction
-import com.anangkur.uangkerja.data.model.transaction.TransactionApi
 import com.anangkur.uangkerja.util.*
 import com.esafirm.imagepicker.features.ImagePicker
 import com.theartofdev.edmodo.cropper.CropImage
@@ -25,7 +24,7 @@ class DetailTransactionActivity: BaseActivity<DetailTransactionViewModel>(), Det
 
     companion object {
         private const val EXTRA_TRANSACTION = "EXTRA_TRANSACTION"
-        fun startActivity(context: Context, data: TransactionApi){
+        fun startActivity(context: Context, data: Transaction){
             context.startActivity(
                 Intent(context, DetailTransactionActivity::class.java)
                     .putExtra(EXTRA_TRANSACTION, data)

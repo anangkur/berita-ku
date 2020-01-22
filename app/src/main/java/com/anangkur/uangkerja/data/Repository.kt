@@ -15,9 +15,9 @@ import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.product.Product
-import com.anangkur.uangkerja.data.model.profile.ResponseUser
 import com.anangkur.uangkerja.data.model.profile.User
-import com.anangkur.uangkerja.data.model.transaction.TransactionApi
+import com.anangkur.uangkerja.data.model.transaction.Bank
+import com.anangkur.uangkerja.data.model.transaction.Transaction
 import kotlinx.coroutines.withContext
 
 class Repository(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository) {
@@ -173,19 +173,39 @@ class Repository(private val remoteRepository: RemoteRepository, private val loc
             }
         }
 
-    fun getHistoryTransaction(page: Int?): LiveData<Result<BaseResponse<BasePagination<TransactionApi>>>> =
+    fun getHistoryTransaction(page: Int?): LiveData<Result<BaseResponse<BasePagination<Transaction>>>> =
         liveData {
             emit(Result.loading())
             val response = remoteRepository.getHistoryTransaction("Bearer ${loadApiToken()}", page)
-            val responseLive = MutableLiveData<Result<BaseResponse<BasePagination<TransactionApi>>>>()
+            val responseLive = MutableLiveData<Result<BaseResponse<BasePagination<Transaction>>>>()
             if (response.status == Result.Status.SUCCESS){
                 withContext(Dispatchers.Main){
                     responseLive.value = response
                     emitSource(responseLive)
                 }
             }else if (response.status == Result.Status.ERROR){
-                emit(Result.error(response.message?:""))
-                emitSource(responseLive)
+                withContext(Dispatchers.Main){
+                    emit(Result.error(response.message?:""))
+                    emitSource(responseLive)
+                }
+            }
+        }
+
+    fun getBank(): LiveData<Result<BaseResponse<List<Bank>>>> =
+        liveData {
+            emit(Result.loading())
+            val response = remoteRepository.getBank("Bearer ${loadApiToken()}")
+            val responseLive = MutableLiveData<Result<BaseResponse<List<Bank>>>>()
+            if (response.status == Result.Status.SUCCESS){
+                withContext(Dispatchers.Main){
+                    responseLive.value = response
+                    emitSource(responseLive)
+                }
+            }else if (response.status == Result.Status.ERROR){
+                withContext(Dispatchers.Main){
+                    emit(Result.error(response.message?:""))
+                    emitSource(responseLive)
+                }
             }
         }
 

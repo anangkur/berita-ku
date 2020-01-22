@@ -8,27 +8,27 @@ import com.anangkur.uangkerja.data.Repository
 import com.anangkur.uangkerja.data.model.BasePagination
 import com.anangkur.uangkerja.data.model.BaseResponse
 import com.anangkur.uangkerja.data.model.Result
-import com.anangkur.uangkerja.data.model.transaction.TransactionApi
+import com.anangkur.uangkerja.data.model.transaction.Transaction
 
 class HistoryTransaksiViewModel(private val repository: Repository): ViewModel(){
 
     private val reloadTrigger = MutableLiveData<Int>()
-    private val tempListHistoryTransaction = ArrayList<TransactionApi>()
-    val listHistoryTransactionLiveData = MutableLiveData<List<TransactionApi>>()
+    private val tempListHistoryTransaction = ArrayList<Transaction>()
+    val listHistoryTransactionLiveData = MutableLiveData<List<Transaction>>()
     val loadMoreLive = MutableLiveData<Boolean>()
     var positionStart = 0
     var differentCount = 0
     var nextPage = 0
     var pagelast = 0
-    val resultListHistoryTransactionLiveData: LiveData<Result<BaseResponse<BasePagination<TransactionApi>>>> =
+    val resultListHistoryTransactionLiveData: LiveData<Result<BaseResponse<BasePagination<Transaction>>>> =
         Transformations.switchMap(reloadTrigger){
             repository.getHistoryTransaction(it)
         }
     fun getHistoryTransaction(page: Int?){
         reloadTrigger.value = page
     }
-    fun paginateData(data: BasePagination<TransactionApi>){
-        val latestData = ArrayList<TransactionApi>()
+    fun paginateData(data: BasePagination<Transaction>){
+        val latestData = ArrayList<Transaction>()
         with(tempListHistoryTransaction){
             if (data.currentPage == 1){
                 clear()

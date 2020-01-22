@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.anangkur.uangkerja.R
 import com.anangkur.uangkerja.base.BaseFragment
 import com.anangkur.uangkerja.data.model.Result
-import com.anangkur.uangkerja.data.model.transaction.TransactionApi
+import com.anangkur.uangkerja.data.model.transaction.Transaction
 import com.anangkur.uangkerja.feature.detailTransaction.DetailTransactionActivity
 import com.anangkur.uangkerja.util.*
 import kotlinx.android.synthetic.main.fragment_history.*
@@ -87,7 +87,7 @@ class HistoryFragment: BaseFragment<HistoryTransaksiViewModel>(), HistoryActionL
         }
     }
 
-    override fun onClickItem(item: TransactionApi) {
+    override fun onClickItem(item: Transaction) {
         DetailTransactionActivity.startActivity(requireContext(), item)
     }
 }

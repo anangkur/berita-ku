@@ -35,6 +35,16 @@
             app:layout_constraintTop_toBottomOf="@id/tv_total"
             app:layout_constraintBottom_toTopOf="@id/spinner_pilih_bank"
             app:layout_constraintLeft_toLeftOf="parent" />
+        <ImageView
+            android:id="@+id/btn_reload_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_refresh_black_24dp"
+            android:padding="@dimen/dimens_10dp"
+            android:foreground="?selectableItemBackground"
+            app:layout_constraintTop_toTopOf="@id/tv_label_pilih_bank"
+            app:layout_constraintBottom_toBottomOf="@id/tv_label_pilih_bank"
+            app:layout_constraintLeft_toRightOf="@id/tv_label_pilih_bank"/>
         <Spinner
             android:id="@+id/spinner_pilih_bank"
             style="@style/SpinnerDefault"
@@ -42,6 +52,16 @@
             app:layout_constraintTop_toBottomOf="@id/tv_label_pilih_bank"
             app:layout_constraintBottom_toTopOf="@id/layout_bank"
             app:layout_constraintLeft_toLeftOf="parent"/>
+        <ProgressBar
+            android:id="@+id/pb_spinner_bank"
+            style="?android:progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/spinner_pilih_bank"
+            app:layout_constraintBottom_toBottomOf="@id/spinner_pilih_bank"
+            app:layout_constraintLeft_toLeftOf="@id/spinner_pilih_bank"
+            app:layout_constraintRight_toRightOf="@id/spinner_pilih_bank"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_bank"
             style="@style/ConstraintWrapHeight"

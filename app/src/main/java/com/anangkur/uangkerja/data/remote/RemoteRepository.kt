@@ -11,13 +11,17 @@ import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.product.Product
-import com.anangkur.uangkerja.data.model.profile.ResponseUser
 import com.anangkur.uangkerja.data.model.profile.User
-import com.anangkur.uangkerja.data.model.transaction.TransactionApi
+import com.anangkur.uangkerja.data.model.transaction.Bank
+import com.anangkur.uangkerja.data.model.transaction.Transaction
 
 class RemoteRepository: DataSource, BaseDataSource() {
 
-    override suspend fun getHistoryTransaction(token: String, page: Int?): Result<BaseResponse<BasePagination<TransactionApi>>> {
+    override suspend fun getBank(token: String): Result<BaseResponse<List<Bank>>> {
+        return getResult { ApiService.getApiService.getBank(token) }
+    }
+
+    override suspend fun getHistoryTransaction(token: String, page: Int?): Result<BaseResponse<BasePagination<Transaction>>> {
         return getResult { ApiService.getApiService.getHistoryTransaction(token, page) }
     }
 

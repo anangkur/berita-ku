@@ -9,9 +9,9 @@ import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.product.Product
-import com.anangkur.uangkerja.data.model.profile.ResponseUser
 import com.anangkur.uangkerja.data.model.profile.User
-import com.anangkur.uangkerja.data.model.transaction.TransactionApi
+import com.anangkur.uangkerja.data.model.transaction.Bank
+import com.anangkur.uangkerja.data.model.transaction.Transaction
 
 interface DataSource {
     suspend fun postLogin(email: String, password: String): Result<ResponseLogin> {throw Exception()}
@@ -21,7 +21,8 @@ interface DataSource {
     suspend fun getListCategory(token: String): Result<BaseResponse<List<Category>>> {throw Exception()}
     suspend fun getDetailProduct(token: String, productId: String): Result<BaseResponse<DetailProduct>> {throw Exception()}
     suspend fun getConfigCoin(token: String): Result<BaseResponse<List<ConfigCoin>>> { throw Exception() }
-    suspend fun getHistoryTransaction(token: String, page: Int?): Result<BaseResponse<BasePagination<TransactionApi>>> { throw Exception() }
+    suspend fun getHistoryTransaction(token: String, page: Int?): Result<BaseResponse<BasePagination<Transaction>>> { throw Exception() }
+    suspend fun getBank(token: String): Result<BaseResponse<List<Bank>>>{ throw Exception() }
 
     fun saveApiToken(apiToken: String) { throw Exception() }
     fun loadApiToken(): String? { throw Exception() }

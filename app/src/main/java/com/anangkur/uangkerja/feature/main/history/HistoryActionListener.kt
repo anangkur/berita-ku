@@ -1,7 +1,7 @@
 package com.anangkur.uangkerja.feature.main.history
 
-import com.anangkur.uangkerja.data.model.transaction.TransactionApi
+import com.anangkur.uangkerja.data.model.transaction.Transaction
 
 interface HistoryActionListener {
-    fun onClickItem(item: TransactionApi)
+    fun onClickItem(item: Transaction)
 }
