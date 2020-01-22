@@ -89,6 +89,7 @@ class ListProductActivity: BaseActivity<ListProductViewModel>(), ListProductActi
                     }
                     Result.Status.ERROR -> {
                         swipe_list_product.stopLoading()
+                        mAdapter.showProgress(false, positionStart, differentCount)
                         this@ListProductActivity.showSnackbarShort(it.message?:getString(R.string.error_default))
                     }
                 }

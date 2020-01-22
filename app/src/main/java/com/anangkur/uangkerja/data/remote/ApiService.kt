@@ -9,8 +9,8 @@ import com.anangkur.uangkerja.data.model.auth.ResponseLogin
 import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
-import com.anangkur.uangkerja.data.model.profile.ResponseUser
 import com.anangkur.uangkerja.data.model.profile.User
+import com.anangkur.uangkerja.data.model.transaction.TransactionApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -19,8 +19,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
-
 interface ApiService {
+
+    @GET("transaction")
+    suspend fun getHistoryTransaction(
+        @Header("Authorization") token: String,
+        @Query("page") page: Int?
+    ): Response<BaseResponse<BasePagination<TransactionApi>>>
 
     @GET("config/coin")
     suspend fun getConfigCoin(

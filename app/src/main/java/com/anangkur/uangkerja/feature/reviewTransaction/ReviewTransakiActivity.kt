@@ -11,6 +11,7 @@ import com.anangkur.uangkerja.base.BaseActivity
 import com.anangkur.uangkerja.base.BaseSpinnerListener
 import com.anangkur.uangkerja.data.model.transaction.Bank
 import com.anangkur.uangkerja.data.model.transaction.Transaction
+import com.anangkur.uangkerja.data.model.transaction.TransactionApi
 import com.anangkur.uangkerja.feature.detailTransaction.DetailTransactionActivity
 import com.anangkur.uangkerja.util.obtainViewModel
 import com.anangkur.uangkerja.util.setupSpinner
@@ -67,14 +68,6 @@ class ReviewTransakiActivity: BaseActivity<ReviewTransaksiViewModel>(), ReviewTr
     }
 
     override fun onClickLanjutkan() {
-        DetailTransactionActivity.startActivity(this,
-            Transaction(
-                "ABC/123/DEF",
-                "",
-                Transaction.Jenis.TOP_UP,
-                "Rp 100.000",
-                "",
-                Transaction.Status.PENDING)
-        )
+        DetailTransactionActivity.startActivity(this, TransactionApi())
     }
 }

@@ -15,7 +15,7 @@ class ListProductViewModel(private val repository: Repository): ViewModel(){
     var categoryActive: String? = null
 
     private val reloadTrigger = MutableLiveData<ProductParam>()
-    val tempListProduct = ArrayList<Product>()
+    private val tempListProduct = ArrayList<Product>()
     val listProductLiveData = MutableLiveData<List<Product>>()
     val loadMoreLive = MutableLiveData<Boolean>()
     var positionStart = 0

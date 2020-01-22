@@ -43,6 +43,14 @@ fun Activity.showSnackbarShort(message: String){
     Snackbar.make(this.findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show()
 }
 
+fun View.showSnackbarLong(message: String){
+    Snackbar.make(this, message, Snackbar.LENGTH_LONG).show()
+}
+
+fun View.showSnackbarShort(message: String){
+    Snackbar.make(this, message, Snackbar.LENGTH_SHORT).show()
+}
+
 fun Context.showToastShort(message: String){
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }

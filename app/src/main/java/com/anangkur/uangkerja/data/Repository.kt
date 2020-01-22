@@ -17,6 +17,7 @@ import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.product.Product
 import com.anangkur.uangkerja.data.model.profile.ResponseUser
 import com.anangkur.uangkerja.data.model.profile.User
+import com.anangkur.uangkerja.data.model.transaction.TransactionApi
 import kotlinx.coroutines.withContext
 
 class Repository(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository) {
@@ -169,6 +170,22 @@ class Repository(private val remoteRepository: RemoteRepository, private val loc
                     emit(Result.error(response.message?:""))
                     emitSource(responseLive)
                 }
+            }
+        }
+
+    fun getHistoryTransaction(page: Int?): LiveData<Result<BaseResponse<BasePagination<TransactionApi>>>> =
+        liveData {
+            emit(Result.loading())
+            val response = remoteRepository.getHistoryTransaction("Bearer ${loadApiToken()}", page)
+            val responseLive = MutableLiveData<Result<BaseResponse<BasePagination<TransactionApi>>>>()
+            if (response.status == Result.Status.SUCCESS){
+                withContext(Dispatchers.Main){
+                    responseLive.value = response
+                    emitSource(responseLive)
+                }
+            }else if (response.status == Result.Status.ERROR){
+                emit(Result.error(response.message?:""))
+                emitSource(responseLive)
             }
         }
 
