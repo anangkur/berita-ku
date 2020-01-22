@@ -6,6 +6,7 @@ import com.anangkur.uangkerja.data.model.BaseResponse
 import com.anangkur.uangkerja.data.model.product.Product
 import com.anangkur.uangkerja.data.model.auth.Register
 import com.anangkur.uangkerja.data.model.auth.ResponseLogin
+import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.profile.ResponseUser
@@ -20,6 +21,11 @@ import java.util.concurrent.TimeUnit
 
 
 interface ApiService {
+
+    @GET("config/coin")
+    suspend fun getConfigCoin(
+        @Header("Authorization") token: String
+    ): Response<BaseResponse<List<ConfigCoin>>>
 
     @GET("product")
     suspend fun getListProduct(

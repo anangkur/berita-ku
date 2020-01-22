@@ -11,10 +11,12 @@ import kotlinx.coroutines.Dispatchers
 import com.anangkur.uangkerja.data.model.Result
 import com.anangkur.uangkerja.data.model.auth.Register
 import com.anangkur.uangkerja.data.model.auth.ResponseLogin
+import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.product.Product
 import com.anangkur.uangkerja.data.model.profile.ResponseUser
+import com.anangkur.uangkerja.data.model.profile.User
 import kotlinx.coroutines.withContext
 
 class Repository(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository) {
@@ -28,7 +30,19 @@ class Repository(private val remoteRepository: RemoteRepository, private val loc
     }
 
     fun deleteApiToken(){
-        return localRepository.deleteApiToken()
+        localRepository.deleteApiToken()
+    }
+
+    fun saveConfigCoin(currency: Int){
+        localRepository.saveConfigCoin(currency)
+    }
+
+    fun loadConfigCoin(): Int? {
+        return localRepository.loadConfigCoin()
+    }
+
+    fun deleteConfigCoin(){
+        localRepository.deleteConfidCoin()
     }
 
     fun postLogin(email: String, password: String): LiveData<Result<ResponseLogin>> =
@@ -67,11 +81,11 @@ class Repository(private val remoteRepository: RemoteRepository, private val loc
             }
         }
 
-    fun getProfile(): LiveData<Result<ResponseUser>> =
+    fun getProfile(): LiveData<Result<User>> =
         liveData(Dispatchers.IO){
             emit(Result.loading())
             val response = remoteRepository.getProfile("Bearer ${loadApiToken()}")
-            val responseLive = MutableLiveData<Result<ResponseUser>>()
+            val responseLive = MutableLiveData<Result<User>>()
             if (response.status == Result.Status.SUCCESS) {
                 withContext(Dispatchers.Main){
                     responseLive.value = response
@@ -127,6 +141,24 @@ class Repository(private val remoteRepository: RemoteRepository, private val loc
             emit(Result.loading())
             val response = remoteRepository.getDetailProduct("Bearer ${loadApiToken()}", productId)
             val responseLive = MutableLiveData<Result<BaseResponse<DetailProduct>>>()
+            if (response.status == Result.Status.SUCCESS){
+                withContext(Dispatchers.Main){
+                    responseLive.value = response
+                    emitSource(responseLive)
+                }
+            }else if (response.status == Result.Status.ERROR){
+                withContext(Dispatchers.Main){
+                    emit(Result.error(response.message?:""))
+                    emitSource(responseLive)
+                }
+            }
+        }
+
+    fun getConfigCoin(): LiveData<Result<BaseResponse<List<ConfigCoin>>>> =
+        liveData {
+            emit(Result.loading())
+            val response = remoteRepository.getConfigCoin("Bearer ${loadApiToken()}")
+            val responseLive = MutableLiveData<Result<BaseResponse<List<ConfigCoin>>>>()
             if (response.status == Result.Status.SUCCESS){
                 withContext(Dispatchers.Main){
                     responseLive.value = response

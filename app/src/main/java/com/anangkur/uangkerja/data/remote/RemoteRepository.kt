@@ -7,12 +7,18 @@ import com.anangkur.uangkerja.data.model.BaseResponse
 import com.anangkur.uangkerja.data.model.Result
 import com.anangkur.uangkerja.data.model.auth.Register
 import com.anangkur.uangkerja.data.model.auth.ResponseLogin
+import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
 import com.anangkur.uangkerja.data.model.product.Product
 import com.anangkur.uangkerja.data.model.profile.ResponseUser
+import com.anangkur.uangkerja.data.model.profile.User
 
 class RemoteRepository: DataSource, BaseDataSource() {
+
+    override suspend fun getConfigCoin(token: String): Result<BaseResponse<List<ConfigCoin>>> {
+        return getResult{ ApiService.getApiService.getConfigCoin(token) }
+    }
 
     override suspend fun getListProduct(token: String, category: Int?, page: Int?): Result<BaseResponse<BasePagination<Product>>> {
         return getResult { ApiService.getApiService.getListProduct(token, category, page) }
@@ -39,7 +45,7 @@ class RemoteRepository: DataSource, BaseDataSource() {
         return getResult { ApiService.getApiService.postRegister(name, email, password, passwordConfirm) }
     }
 
-    override suspend fun getProfile(token: String): Result<ResponseUser> {
+    override suspend fun getProfile(token: String): Result<User> {
         return getResult { ApiService.getApiService.getUserProfile(token) }
     }
 
