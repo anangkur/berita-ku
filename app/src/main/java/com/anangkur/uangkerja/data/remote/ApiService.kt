@@ -6,9 +6,12 @@ import com.anangkur.uangkerja.data.model.BaseResponse
 import com.anangkur.uangkerja.data.model.product.Product
 import com.anangkur.uangkerja.data.model.auth.Register
 import com.anangkur.uangkerja.data.model.auth.ResponseLogin
+import com.anangkur.uangkerja.data.model.config.ConfigCoin
 import com.anangkur.uangkerja.data.model.product.Category
 import com.anangkur.uangkerja.data.model.product.DetailProduct
-import com.anangkur.uangkerja.data.model.profile.ResponseUser
+import com.anangkur.uangkerja.data.model.profile.User
+import com.anangkur.uangkerja.data.model.transaction.Bank
+import com.anangkur.uangkerja.data.model.transaction.Transaction
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -17,8 +20,23 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
-
 interface ApiService {
+
+    @GET("bank")
+    suspend fun getBank(
+        @Header("Authorization") token: String
+    ): Response<BaseResponse<List<Bank>>>
+
+    @GET("transaction")
+    suspend fun getHistoryTransaction(
+        @Header("Authorization") token: String,
+        @Query("page") page: Int?
+    ): Response<BaseResponse<BasePagination<Transaction>>>
+
+    @GET("config/coin")
+    suspend fun getConfigCoin(
+        @Header("Authorization") token: String
+    ): Response<BaseResponse<List<ConfigCoin>>>
 
     @GET("product")
     suspend fun getListProduct(
@@ -57,7 +75,7 @@ interface ApiService {
     @GET("profile")
     suspend fun getUserProfile(
         @Header("Authorization") token: String
-    ): Response<ResponseUser>
+    ): Response<User>
 
     companion object Factory{
         val getApiService: ApiService by lazy {

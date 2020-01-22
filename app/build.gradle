@@ -18,12 +18,12 @@ android {
         debug {
             applicationIdSuffix ".debug"
             debuggable true
-            buildConfigField "String", "baseUrl", '"http://117.53.44.182/dev/ecommerce-uangkerja-api/public/api/"'
-            buildConfigField "String", "baseImageUrl", '"http://117.53.44.182/dev/ecommerce-uangkerja/public/storage/"'
+            buildConfigField "String", "baseUrl", '"http://117.53.44.182/dev/koperasi-uangkerja-web/public/api/"'
+            buildConfigField "String", "baseImageUrl", '"http://117.53.44.182/dev/koperasi-uangkerja-web/public/storage/"'
         }
         release {
-            buildConfigField "String", "baseUrl", '"http://117.53.44.182/dev/ecommerce-uangkerja-api/public/api/"'
-            buildConfigField "String", "baseImageUrl", '"http://117.53.44.182/dev/ecommerce-uangkerja/public/storage/"'
+            buildConfigField "String", "baseUrl", '"http://117.53.44.182/dev/koperasi-uangkerja-web/public/api/"'
+            buildConfigField "String", "baseImageUrl", '"http://117.53.44.182/dev/koperasi-uangkerja-web/public/storage/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

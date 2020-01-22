@@ -14,6 +14,7 @@ import com.anangkur.uangkerja.feature.main.MainActivity
 import com.anangkur.uangkerja.feature.register.RegisterActivity
 import com.anangkur.uangkerja.util.*
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.toast
 
 class LoginActivity: BaseActivity<LoginViewModel>(), LoginActionListener {
 
@@ -42,13 +43,29 @@ class LoginActivity: BaseActivity<LoginViewModel>(), LoginActionListener {
                     Result.Status.LOADING -> { showLoading() }
                     Result.Status.SUCCESS -> {
                         hideLoading()
-                        saveApiToken(it.data?.token?:"")
+                        responseLogin = it.data
+                        getConfigCoin()
+                    }
+                    Result.Status.ERROR -> {
+                        hideLoading()
+                        this@LoginActivity.showSnackbarShort(it.message?:getString(R.string.error_default))
+                    }
+                }
+            })
+            resultConfigCoinLiveData.observe(this@LoginActivity, Observer {
+                when (it.status){
+                    Result.Status.LOADING -> { showLoading() }
+                    Result.Status.SUCCESS -> {
+                        hideLoading()
+                        saveApiToken(responseLogin?.token?:"")
+                        saveConfigCoin(it.data?.data?.get(0)?.currency?:0)
                         finish()
                         MainActivity.startActivity(this@LoginActivity)
                     }
                     Result.Status.ERROR -> {
                         hideLoading()
-                        this@LoginActivity.showSnackbarShort(it.message?:getString(R.string.error_default))
+                        toast(it.message?:getString(R.string.message_default))
+                        finish()
                     }
                 }
             })

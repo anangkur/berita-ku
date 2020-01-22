@@ -11,6 +11,11 @@
     <string name="btn_30_koin">+ 30 Koin</string>
     <string name="btn_10_koin">+ 10 Koin</string>
     <string name="btn_5_koin">+ 5 Koin</string>
+    <string name="btn_upload_bukti_transfer">Upload Bukti Transfer</string>
+    <string name="btn_lanjutkan">Lanjutkan</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_camera">Camera</string>
+    <string name="btn_gallery">Gallery</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_history">History</string>
@@ -29,10 +34,13 @@
     <string name="toolbar_list_product">List Product</string>
     <string name="toolbar_detail_product">Detail Product</string>
     <string name="toolbar_pilih_koin">Pilih Koin</string>
+    <string name="toolbar_review_transaksi">Review Transaksi</string>
+    <string name="toolbar_history_transaksi">History Transaksi</string>
+    <string name="toolbar_detail_transaction">Detil Transaksi</string>
 
     <string name="error_password">password must be 6 character or more</string>
     <string name="error_email">email address is not valid</string>
-    <string name="error_default">an error occured</string>
+    <string name="error_default">an error occurred</string>
     <string name="error_empty">data is empty</string>
     <string name="error_name">Name Cannot be null</string>
     <string name="error_password_confirm">Password confirm must same with password</string>
@@ -47,42 +55,35 @@
     <string name="label_list_produk">List \nProduk</string>
     <string name="label_instock">Stok Tersedia</string>
     <string name="label_outstok">Stok Kosong</string>
-
-    <string name="message_success_register">New Account Registered Successfully</string>
-    <string name="message_delay_before_exit">Tekan kembali untuk keluar</string>
-
-    <string name="dummy_saldo">Rp. 10.000</string>
-
-    <string name="text_todo">TODO</string>
-    <string name="text_category">Kategori</string>
-    <string name="btn_submit">Submit</string>
     <string name="label_koin_kamu">Koin Kamu</string>
-    <string name="dummy_koin">0</string>
     <string name="label_total_pembayaran">Total Pembayaran</string>
     <string name="label_pilih_bank">Pilih Bank</string>
     <string name="label_nama_bank">Nama Bank</string>
-    <string name="dummy_bank_mandiri">Mandiri</string>
     <string name="label_nomor_rekening">Nomor Rekening</string>
-    <string name="dummy_norek">1310013437308</string>
     <string name="label_atas_nama">Atas Nama</string>
-    <string name="dummy_atas_nama">Anang Kurniawan</string>
-    <string name="btn_lanjutkan">Lanjutkan</string>
-    <string name="toolbar_review_transaksi">Review Transaksi</string>
-    <string name="toolbar_history_transaksi">History Transaksi</string>
-    <string name="dummy_jenis_transaksi">TOP_UP</string>
-    <string name="dummy_status">Pending</string>
-    <string name="dummy_id_transaksi">ABC/123/DEF</string>
     <string name="label_jenistransaksi_order">Order</string>
     <string name="label_jenistransaksi_topup">Top Up</string>
     <string name="label_statustransaksi_sukses">Success</string>
     <string name="label_statustransaksi_cancel">Cancel</string>
     <string name="label_statustransaksi_pending">Pending</string>
+    <string name="label_select_image_from">Select Image from</string>
+
+    <string name="message_success_register">New Account Registered Successfully</string>
+    <string name="message_delay_before_exit">Tekan kembali untuk keluar</string>
+    <string name="message_copy_to_clipboard">copied to clipboard</string>
+    <string name="message_default">Terjadi Kesalahan</string>
+
+    <string name="dummy_saldo">Rp. 10.000</string>
+    <string name="dummy_koin">0</string>
+    <string name="dummy_bank_mandiri">Mandiri</string>
+    <string name="dummy_norek">1310013437308</string>
+    <string name="dummy_atas_nama">Anang Kurniawan</string>
+    <string name="dummy_jenis_transaksi">TOP_UP</string>
+    <string name="dummy_status">Pending</string>
+    <string name="dummy_id_transaksi">ABC/123/DEF</string>
     <string name="dummy_date_status">21 Februari 2020</string>
     <string name="dummy_message_status">Anda belum menyelesaikan pembayaran ini. Harap selesaikan pembayaran sebelum</string>
-    <string name="btn_upload_bukti_transfer">Upload Bukti Transfer</string>
-    <string name="toolbar_detail_transaction">Detil Transaksi</string>
-    <string name="label_select_image_from">Select Image from</string>
-    <string name="btn_camera">Camera</string>
-    <string name="btn_gallery">Gallery</string>
-    <string name="message_copy_to_clipboard">copied to clipboard</string>
+
+    <string name="text_todo">TODO</string>
+    <string name="text_category">Kategori</string>
 </resources>

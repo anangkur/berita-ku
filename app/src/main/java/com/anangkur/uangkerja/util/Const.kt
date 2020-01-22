@@ -2,8 +2,8 @@ package com.anangkur.uangkerja.util
 
 object Const {
     const val PREF_NAME = "PREF_NAME"
-
     const val PREF_TOKEN = "PREF_TOKEN"
+    const val PREF_CONFIG_COIN = "PREF_CONFIG_COIN"
 
     const val MAX_IMAGE_SIZE = 5120.0 // 5MB
     const val COMPRESS_QUALITY = 95
