@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.anangkur.baseproject.data.local.room.AppDatabase
 import com.anangkur.baseproject.util.Const
 
 class ViewModelFactory(private val repository: Repository): ViewModelProvider.NewInstanceFactory() {
@@ -17,8 +18,13 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
 
     companion object{
         @Volatile private var INSTANCE: ViewModelFactory? = null
-        fun getInstance(context: Context) = INSTANCE ?: synchronized(ViewModelFactory::class.java){
-            INSTANCE ?: ViewModelFactory(Injection.provideRepository(context, context.getSharedPreferences(Const.PREF_NAME, MODE_PRIVATE))).also { INSTANCE = it }
-        }
+        fun getInstance(context: Context) =
+            INSTANCE ?: synchronized(ViewModelFactory::class.java){
+                INSTANCE ?: ViewModelFactory(
+                    Injection.provideRepository(
+                        context.getSharedPreferences(Const.PREF_NAME, MODE_PRIVATE),
+                        AppDatabase.getDatabase(context).getDao()
+                    )).also { INSTANCE = it }
+            }
     }
 }
