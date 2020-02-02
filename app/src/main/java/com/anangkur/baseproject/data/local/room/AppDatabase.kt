@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.anangkur.baseproject.util.Const
 
-@Database(entities = arrayOf(), version = 1)
+@Database(entities = arrayOf(AppEntity::class), version = 1)
 abstract class AppDatabase: RoomDatabase(){
 
     abstract fun getDao(): AppDao
