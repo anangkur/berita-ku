@@ -10,10 +10,11 @@ import com.anangkur.beritaku.R
 import com.anangkur.beritaku.base.BaseActivity
 import com.anangkur.beritaku.data.model.BaseResult
 import com.anangkur.beritaku.data.model.news.Article
+import com.anangkur.beritaku.feature.detail.DetailActivity
 import com.anangkur.beritaku.util.*
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity: BaseActivity<HomeViewModel>() {
+class HomeActivity: BaseActivity<HomeViewModel>(), HomeActionListener {
 
     companion object{
         fun startActivity(context: Context){
@@ -125,7 +126,7 @@ class HomeActivity: BaseActivity<HomeViewModel>() {
     }
 
     private fun setupAdapterBreaking(){
-        adapterBreaking = BreakingAdapter()
+        adapterBreaking = BreakingAdapter(this)
         recycler_breaking.apply {
             adapter = adapterBreaking
             setupRecyclerViewLinear(this@HomeActivity, LinearLayout.VERTICAL)
@@ -133,7 +134,7 @@ class HomeActivity: BaseActivity<HomeViewModel>() {
     }
 
     private fun setupAdapterBusiness(){
-        adapterBusiness = RegularAdapter()
+        adapterBusiness = RegularAdapter(this)
         recycler_business.apply {
             adapter = adapterBusiness
             setupRecyclerViewLinear(this@HomeActivity, LinearLayout.HORIZONTAL)
@@ -141,7 +142,7 @@ class HomeActivity: BaseActivity<HomeViewModel>() {
     }
 
     private fun setupAdapterTech(){
-        adapterTech = RegularAdapter()
+        adapterTech = RegularAdapter(this)
         recycler_tech.apply {
             adapter = adapterTech
             setupRecyclerViewLinear(this@HomeActivity, LinearLayout.HORIZONTAL)
@@ -149,7 +150,7 @@ class HomeActivity: BaseActivity<HomeViewModel>() {
     }
 
     private fun setupAdapterSport(){
-        adapterSport = RegularAdapter()
+        adapterSport = RegularAdapter(this)
         recycler_sport.apply {
             adapter = adapterSport
             setupRecyclerViewLinear(this@HomeActivity, LinearLayout.HORIZONTAL)
@@ -160,5 +161,10 @@ class HomeActivity: BaseActivity<HomeViewModel>() {
         tv_title_breaking.text = data.title
         tv_content_breaking.text = data.content
         iv_breaking.setImageUrl(data.urlToImage?:"")
+        btn_read_more_breaking.setOnClickListener { this.onClickItem(data) }
+    }
+
+    override fun onClickItem(data: Article) {
+        DetailActivity.startActivity(this, data)
     }
 }

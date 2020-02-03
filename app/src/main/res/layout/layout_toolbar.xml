@@ -4,4 +4,5 @@
     android:id="@+id/toolbar"
     style="@style/ToolbarDefault"
     app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
-    app:titleTextColor="@color/white"/>
+    app:titleTextColor="@color/white"
+    android:elevation="4dp"/>

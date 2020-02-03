@@ -6,7 +6,8 @@
     style="@style/LinearVerticalDefault">
     <include layout="@layout/layout_toolbar"/>
     <androidx.core.widget.NestedScrollView
-        style="@style/NestedScrollDefault">
+        style="@style/NestedScrollDefault"
+        android:background="@color/white">
         <androidx.constraintlayout.widget.ConstraintLayout
             style="@style/ConstraintWrapHeight">
             <TextView
