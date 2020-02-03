@@ -45,16 +45,16 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
     <style name="RelativeConstraint" parent="RelativeDefault">
-        <item name="android:layout_height">@dimen/dimens_0dp</item>
-        <item name="android:layout_width">@dimen/dimens_0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">0dp</item>
     </style>
     <style name="RelativeButton" parent="RelativeDefault">
-        <item name="android:layout_height">@dimen/dimens_48dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:background">@drawable/rect_solid_coloraccent_rounded_100dp</item>
         <item name="android:foreground">@drawable/ripple_button_background_dark</item>
     </style>
     <style name="RelativeButtonTransparent" parent="RelativeDefault">
-        <item name="android:layout_height">@dimen/dimens_48dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:foreground">?selectableItemBackground</item>
     </style>
     <!--end of style for relative-->
@@ -104,31 +104,31 @@
     <style name="TextNormal">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/size_14sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
     <style name="TextSmall">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/size_12sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
     <style name="TextBig">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
     <style name="TextExtraBig">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/size_18sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
     <style name="TextSuperExtraBig">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/dimens_24dp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
     <style name="TextSuperSuperExtraBig">
@@ -146,12 +146,12 @@
     </style>
 
     <style name="ImageViewError" parent="ImageViewDefault">
-        <item name="android:layout_width">@dimen/dimens_120dp</item>
-        <item name="android:layout_height">@dimen/dimens_120dp</item>
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">120dp</item>
     </style>
 
     <style name="ImageViewHeightRatio" parent="ImageViewDefault">
-        <item name="android:layout_height">@dimen/dimens_0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
     <style name="ImageViewWrapAll" parent="ImageViewDefault">
@@ -180,18 +180,18 @@
 
     <!--style for view-->
     <style name="ViewLine">
-        <item name="android:layout_width">@dimen/dimens_0dp</item>
-        <item name="android:layout_height">@dimen/dimens_1dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/gray</item>
     </style>
     <style name="ViewCover">
-        <item name="android:layout_width">@dimen/dimens_0dp</item>
-        <item name="android:layout_height">@dimen/dimens_0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:background">@drawable/rect_gradient_black60_black00</item>
     </style>
     <style name="ViewBackgroundGray">
-        <item name="android:layout_width">@dimen/dimens_0dp</item>
-        <item name="android:layout_height">@dimen/dimens_0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:background">@drawable/rect_rounded_10dp_gray</item>
     </style>
     <!--end of style for view-->
@@ -210,8 +210,8 @@
     <style name="CardDefault">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="cardElevation">@dimen/dimens_4dp</item>
-        <item name="cardCornerRadius">@dimen/dimens_10dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">10dp</item>
     </style>
 
     <style name="CardWrapHeight" parent="CardDefault">
@@ -243,8 +243,8 @@
         <item name="android:layout_width">match_parent</item>
     </style>
     <style name="ViewPagerRatio" parent="ViewPagerDefault">
-        <item name="android:layout_height">@dimen/dimens_0dp</item>
-        <item name="android:layout_width">@dimen/dimens_0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">0dp</item>
     </style>
     <!--end of style for view pager-->
 
@@ -254,16 +254,16 @@
         <item name="android:layout_width">match_parent</item>
     </style>
     <style name="TabLayoutSlider" parent="TabLayoutDefault">
-        <item name="android:layout_width">@dimen/dimens_120dp</item>
-        <item name="android:layout_height">@dimen/dimens_24dp</item>
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">24dp</item>
         <item name="android:clickable">false</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="tabMode">scrollable</item>
         <item name="tabBackground">@drawable/tab_selector</item>
-        <item name="tabIndicatorHeight">@dimen/dimens_0dp</item>
-        <item name="tabMaxWidth">@dimen/dimens_0dp</item>
-        <item name="tabMinWidth">@dimen/dimens_0dp</item>
-        <item name="tabPadding">@dimen/dimens_0dp</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabMinWidth">0dp</item>
+        <item name="tabPadding">0dp</item>
     </style>
     <!--end of style for tab layout-->
 
@@ -295,7 +295,7 @@
         <item name="android:layout_width">match_parent</item>
     </style>
     <style name="ButtonSmall" parent="ButtonDefault">
-        <item name="android:layout_width">@dimen/dimens_120dp</item>
+        <item name="android:layout_width">120dp</item>
     </style>
     <!--end of style for button-->
 

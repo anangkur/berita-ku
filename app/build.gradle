@@ -7,7 +7,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.anangkur.baseproject"
+        applicationId "com.anangkur.sampingantest"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -55,7 +55,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "androidx.annotation:annotation:$androidXAnnotations"
     implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
-    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$liveDataVersion"
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
@@ -104,4 +104,8 @@ dependencies {
     implementation "com.github.esafirm.android-image-picker:imagepicker:$imagePickerVersion"
     implementation "net.opacapp:multiline-collapsingtoolbar:$multilineCollapsingVersion"
     api "com.theartofdev.edmodo:android-image-cropper:$imageCropperVersion"
+
+    // chuck
+    debugImplementation "com.readystatesoftware.chuck:library:$chuckVersion"
+    releaseImplementation "com.readystatesoftware.chuck:library-no-op:$chuckVersion"
 }

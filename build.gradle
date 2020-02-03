@@ -29,7 +29,8 @@ ext {
 
     roomVersion = '2.2.3'
     archLifecycleVersion = '2.1.0'
-    liveDataVersion = '2.2.0-rc03'
+    lifecycleVersion= '2.2.0'
+    liveDataVersion = '2.2.0'
     archVersion = '1.1.1'
 
     junitVersion = '4.12'
@@ -54,6 +55,8 @@ ext {
 
     imagePickerVersion='2.2.0'
     imageCropperVersion='2.8.0'
+
+    chuckVersion='1.1.0'
 }
 
 allprojects {
