@@ -5,6 +5,7 @@
     <color name="colorAccent">#ededed</color>
     <color name="colorPrimaryLight">#5c5c5c</color>
 
+    <color name="blackText">#333333</color>
     <color name="black_00">#00000000</color>
     <color name="black_40">#66000000</color>
     <color name="black_60">#99000000</color>

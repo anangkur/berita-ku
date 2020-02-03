@@ -10,4 +10,8 @@
     <string name="label_select_image_from">Select Image from</string>
 
     <string name="text_todo">TODO</string>
+    <string name="btn_read_more">Baca Selengkapnya..</string>
+    <string name="label_business">Bisnis</string>
+    <string name="label_tech">Teknologi</string>
+    <string name="label_sport">Olahraga</string>
 </resources>
