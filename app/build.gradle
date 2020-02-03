@@ -7,7 +7,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.anangkur.sampingantest"
+        applicationId "com.anangkur.beritaku"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -18,11 +18,11 @@ android {
         debug {
             applicationIdSuffix ".debug"
             debuggable true
-            buildConfigField "String", "baseUrl", '""'
+            buildConfigField "String", "baseUrl", '"https://newsapi.org/v2/"'
             buildConfigField "String", "baseImageUrl", '""'
         }
         release {
-            buildConfigField "String", "baseUrl", '""'
+            buildConfigField "String", "baseUrl", '"https://newsapi.org/v2/"'
             buildConfigField "String", "baseImageUrl", '""'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
