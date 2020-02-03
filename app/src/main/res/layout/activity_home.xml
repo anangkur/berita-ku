@@ -67,6 +67,15 @@
                     app:layout_constraintTop_toBottomOf="@id/separator_breaking"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"/>
+                <ProgressBar
+                    android:id="@+id/pb_breaking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/tv_title_breaking"
+                    app:layout_constraintBottom_toBottomOf="@id/recycler_breaking"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
         <TextView
@@ -77,9 +86,18 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="10dp"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_business"
-            style="@style/RecyclerWrapHeight"/>
+        <RelativeLayout
+            style="@style/RelativeWrapAll">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_business"
+                style="@style/RecyclerWrapHeight"/>
+            <ProgressBar
+                android:id="@+id/pb_business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
         <TextView
             style="@style/TextBig"
             android:text="@string/label_tech"
@@ -88,9 +106,18 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="10dp"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_tech"
-            style="@style/RecyclerWrapHeight"/>
+        <RelativeLayout
+            style="@style/RelativeWrapAll">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_tech"
+                style="@style/RecyclerWrapHeight"/>
+            <ProgressBar
+                android:id="@+id/pb_tech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
         <TextView
             style="@style/TextBig"
             android:text="@string/label_sport"
@@ -99,8 +126,17 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="10dp"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_sport"
-            style="@style/RecyclerWrapHeight"/>
+        <RelativeLayout
+            style="@style/RelativeWrapAll">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_sport"
+                style="@style/RecyclerWrapHeight"/>
+            <ProgressBar
+                android:id="@+id/pb_sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

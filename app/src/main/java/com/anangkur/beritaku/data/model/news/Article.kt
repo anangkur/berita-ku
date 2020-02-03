@@ -1,22 +1,49 @@
 package com.anangkur.beritaku.data.model.news
 
+import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Entity
+@Parcelize
 data class Article(
-    @SerializedName("source")
-    val source: Source = Source(),
+
+    @ColumnInfo(name = "id")
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+
+    @ColumnInfo(name = "author")
     @SerializedName("author")
-    val author: String = "",
+    val author: String? = "",
+
+    @ColumnInfo(name = "title")
     @SerializedName("title")
-    val title: String = "",
+    val title: String? = "",
+
+    @ColumnInfo(name = "description")
     @SerializedName("description")
-    val description: String = "",
+    val description: String? = "",
+
+    @ColumnInfo(name = "url")
     @SerializedName("url")
-    val url: String = "",
+    val url: String? = "",
+
+    @ColumnInfo(name = "urlToImage")
     @SerializedName("urlToImage")
-    val urlToImage: String = "",
+    val urlToImage: String? = "",
+
+    @ColumnInfo(name = "publishedAt")
     @SerializedName("publishedAt")
-    val publishedAt: String = "",
+    val publishedAt: String? = "",
+
+    @ColumnInfo(name = "content")
     @SerializedName("content")
-    val content: String = ""
-)
+    val content: String? = "",
+
+    @ColumnInfo(name = "category")
+    val category: String? = ""
+
+): Parcelable

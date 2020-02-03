@@ -5,6 +5,7 @@ import android.os.Handler
 import androidx.appcompat.widget.Toolbar
 import com.anangkur.beritaku.R
 import com.anangkur.beritaku.base.BaseActivity
+import com.anangkur.beritaku.feature.home.HomeActivity
 import com.anangkur.beritaku.util.obtainViewModel
 
 class SplashActivity: BaseActivity<SplashViewModel>() {
@@ -26,6 +27,7 @@ class SplashActivity: BaseActivity<SplashViewModel>() {
     private fun openActivity(){
         val handler = Handler()
         handler.postDelayed({
+            HomeActivity.startActivity(this)
             finish()
         }, 3000)
     }

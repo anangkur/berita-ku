@@ -12,7 +12,7 @@ class BreakingAdapter: BaseAdapter<Article>(){
         get() = R.layout.item_breaking
 
     override fun bind(data: Article, itemView: View, position: Int) {
-        itemView.iv_item_breaking.setImageUrl(data.urlToImage)
+        itemView.iv_item_breaking.setImageUrl(data.urlToImage?:"")
         itemView.tv_item_breaking.text = data.title
     }
 

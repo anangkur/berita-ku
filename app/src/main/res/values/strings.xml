@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Sampingan Test</string>
-
-    <style name="news_api_key">261d82dd7e26494e841fb1039a4fdaf7</style>
+    <string name="app_name">Berita Ku</string>
 
     <string name="btn_muat_ulang">Muat Ulang</string>
     <string name="btn_camera">Camera</string>

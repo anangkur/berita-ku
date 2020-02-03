@@ -12,7 +12,7 @@ class RegularAdapter: BaseAdapter<Article>() {
         get() = R.layout.item_regular
 
     override fun bind(data: Article, itemView: View, position: Int) {
-        itemView.iv_item_regular.setImageUrl(data.urlToImage)
+        itemView.iv_item_regular.setImageUrl(data.urlToImage?:"")
         itemView.tv_item_regular.text = data.title
     }
 }
