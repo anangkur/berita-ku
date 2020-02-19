@@ -12,4 +12,7 @@
     <string name="label_business">Bisnis</string>
     <string name="label_tech">Teknologi</string>
     <string name="label_sport">Olahraga</string>
+    <string name="btn_lihat_berita_asli">Lihat Berita Asli</string>
+    <string name="menu_open_in_browser">Buka di browser</string>
+    <string name="error_default">Terjadi kesalahan</string>
 </resources>

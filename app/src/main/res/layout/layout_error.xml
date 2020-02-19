@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/RelativeDefault">
     <LinearLayout
         style="@style/LinearVerticalWrap"
@@ -20,19 +20,13 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"/>
-        <RelativeLayout
+        <com.anangkur.materialloadingbutton.MaterialLoadingButton
             android:id="@+id/btn_error"
-            style="@style/RelativeButton"
-            android:layout_marginTop="20dp"
+            style="@style/ButtonDefault"
+            app:mlb_cornerRadius="100dp"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp">
-            <TextView
-                android:id="@+id/tv_btn_error"
-                style="@style/TextBig"
-                android:text="@string/btn_muat_ulang"
-                android:layout_centerInParent="true"
-                android:textColor="@color/white"/>
-        </RelativeLayout>
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
     <ProgressBar
