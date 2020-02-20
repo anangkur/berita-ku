@@ -11,13 +11,13 @@ import android.widget.TextView
 import com.anangkur.beritaku.R
 import com.anangkur.beritaku.util.gone
 import com.anangkur.beritaku.util.visible
+import com.anangkur.materialloadingbutton.MaterialLoadingButton
 
 class BaseErrorView(context: Context, attrs: AttributeSet): RelativeLayout(context, attrs){
 
     private var ivError: ImageView
     private var tvError: TextView
-    private var btnError: RelativeLayout
-    private var tvBtnError: TextView
+    private var btnError: MaterialLoadingButton
     private var pbError: ProgressBar
 
     init {
@@ -25,7 +25,6 @@ class BaseErrorView(context: Context, attrs: AttributeSet): RelativeLayout(conte
         ivError = v.findViewById(R.id.iv_error)
         tvError = v.findViewById(R.id.tv_error)
         btnError = v.findViewById(R.id.btn_error)
-        tvBtnError = v.findViewById(R.id.tv_btn_error)
         pbError = v.findViewById(R.id.pb_error)
         addView(v)
     }
@@ -42,7 +41,7 @@ class BaseErrorView(context: Context, attrs: AttributeSet): RelativeLayout(conte
         ivError.visible()
         tvError.visible()
         tvError.text = errorMessage
-        tvBtnError.text = buttonErrorString
+        btnError.setText(buttonErrorString)
         when(errorType){
             ERROR_NULL_DATA -> {
                 btnError.gone()

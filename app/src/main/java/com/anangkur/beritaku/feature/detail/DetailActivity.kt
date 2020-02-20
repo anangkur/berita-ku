@@ -7,12 +7,13 @@ import androidx.appcompat.widget.Toolbar
 import com.anangkur.beritaku.R
 import com.anangkur.beritaku.base.BaseActivity
 import com.anangkur.beritaku.data.model.news.Article
+import com.anangkur.beritaku.feature.originalNews.OriginalNewsActivity
 import com.anangkur.beritaku.util.obtainViewModel
 import com.anangkur.beritaku.util.setImageUrl
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 
-class DetailActivity: BaseActivity<DetailViewModel>() {
+class DetailActivity: BaseActivity<DetailViewModel>(), DetailActivityActionListener {
 
     companion object{
         const val EXTRA_ARTICLE = "EXTRA_ARTICLE"
@@ -36,6 +37,7 @@ class DetailActivity: BaseActivity<DetailViewModel>() {
 
         getIntentData()
         setupDataToView(mViewModel.article)
+        btn_read_more.setOnClickListener { this.onClickSeeOriginal(mViewModel.article?.url?:"") }
     }
 
     private fun getIntentData(){
@@ -48,5 +50,9 @@ class DetailActivity: BaseActivity<DetailViewModel>() {
         tv_title_detail.text = data?.title
         tv_content_detail.text = data?.content
         iv_detail.setImageUrl(data?.urlToImage?:"")
+    }
+
+    override fun onClickSeeOriginal(url: String) {
+        OriginalNewsActivity.startActivity(this, url)
     }
 }
